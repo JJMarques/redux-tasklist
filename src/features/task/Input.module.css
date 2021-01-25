@@ -1,0 +1,43 @@
+.inputContainer {
+    background: rgb(255, 161, 39);
+    padding: 2em;
+}
+
+.inputContainer h1 {
+    color: white;
+}
+
+.inputContainer input[type=text] {
+    font-size: 1.5em;
+    padding: 0.5em 2em;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.479);
+    border: none;
+    outline: none;
+    color: rgb(65, 65, 65);
+    text-align: center;
+}
+
+.selectTaskType {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectTaskType label {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: rgb(37, 37, 37);
+}
+
+.selectTaskType input[type=radio] {
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-right: 0.2em;
+}
+
+.inputContainer input[type=submit] {
+    font-size: 1.2em;
+}
+
