@@ -1,11 +1,13 @@
 .TasksDisplay {
+    width: 300px;
     margin: 1em;
+    margin-bottom: 3em;
     padding: 0 3em;
     border-radius: 0 0 20px 20px;
     color: rgb(49, 49, 49);
-    background: #ffffff;
-    box-shadow:  5px 5px 10px #ededed,
-    -5px -5px 10px #ffffff;
+    background: #F3F3F3;
+    box-shadow:  6px 6px 12px #dddddd,
+    -6px -6px 12px #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,4 +23,40 @@
     width: 300px;
     height: auto;
     border-top: 1px solid rgb(228, 228, 228);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskContainer div {
+    display: flex;
+    align-items: center;
+}
+
+.taskContainer input {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.deleteButton {
+    cursor: pointer;
+    padding: 10px;
+    background: rgb(224, 224, 224);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+    background: rgb(207, 207, 207);
+    color: rgb(255, 56, 56)
+}
+
+@media only screen and (max-width: 1250px) {
+    .TasksDisplay {
+        width: 94%;
+        padding: 0;
+    }
+    .taskContainer {
+        width: 80%;
+    }
 }

@@ -19,8 +19,9 @@ export function Input() {
         if (taskInput) {
                 dispatch(insertTask({
                     type: taskType,
-                    date: new Date(),
-                    description: taskInput
+                    date: String(new Date()),
+                    description: taskInput,
+                    checked: false
                 }))
         }
         setTaskInput('')
