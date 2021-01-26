@@ -1,0 +1,24 @@
+.TasksDisplay {
+    margin: 1em;
+    padding: 0 3em;
+    border-radius: 0 0 20px 20px;
+    color: rgb(49, 49, 49);
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #ededed,
+    -5px -5px 10px #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TasksDisplay h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.taskContainer {
+    color: rgb(32, 32, 32);
+    width: 300px;
+    height: auto;
+    border-top: 1px solid rgb(228, 228, 228);
+}

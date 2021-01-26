@@ -1,30 +1,40 @@
 import { useState } from 'react'
 import styles from './Input.module.css'
 
-import { useSelector } from 'react-redux'
-import { selectTasks } from './taskSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { insertTask, selectTasks } from './taskSlice'
 
 
 export function Input() {
     const [taskInput, setTaskInput] = useState('')
     const [taskType, setTaskType] = useState('regular')
+
+    const dispatch = useDispatch()
     /* const { task } = useSelector(selectTasks)
     console.log(task) */
 
     const sumbitTask = event => {
         event.preventDefault()
 
-        console.log(taskInput);
+        if (taskInput) {
+                dispatch(insertTask({
+                    type: taskType,
+                    date: new Date(),
+                    description: taskInput
+                }))
+        }
+        setTaskInput('')
     }
 
     return(
         <div className={styles.inputContainer}>
-            <h1>Insert a task below</h1>
+            <h1>Insert a task below ✏️</h1> 
             <form onSubmit={sumbitTask}>
                 <input 
                     type="text"
                     value={taskInput} 
                     onChange={e => setTaskInput(e.target.value)}
+                    placeholder="Walk the dog."
                     autoFocus
                 />
                 <div className={styles.selectTaskType}>

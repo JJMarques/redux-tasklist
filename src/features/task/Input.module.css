@@ -1,10 +1,14 @@
 .inputContainer {
-    background: rgb(255, 161, 39);
-    padding: 2em;
+    border-top: 10px solid #9bcaff;
+    background: rgb(243, 243, 243);
+    padding: 3em;
+    box-shadow:  5px 5px 10px #d7d7d7,
+    -5px -5px 10px #e9e9e9;
 }
 
 .inputContainer h1 {
-    color: white;
+    color: rgb(31, 31, 31);
+    margin-top: 0;
 }
 
 .inputContainer input[type=text] {
@@ -14,12 +18,13 @@
     background: rgba(255, 255, 255, 0.479);
     border: none;
     outline: none;
-    color: rgb(65, 65, 65);
+    color: rgb(94, 94, 94);
     text-align: center;
+    border: 1px solid rgb(177, 177, 177);
 }
 
 .selectTaskType {
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,17 +32,46 @@
 
 .selectTaskType label {
     font-size: 1.1em;
-    font-weight: 500;
-    color: rgb(37, 37, 37);
+    font-weight: 400;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
+    text-align: center;
 }
 
 .selectTaskType input[type=radio] {
-    font-size: 1.2em;
     margin-left: 1em;
     margin-right: 0.2em;
 }
 
-.inputContainer input[type=submit] {
+.inputContainer button[type=submit] {
+    margin-top: 2em;
     font-size: 1.2em;
+    color: rgb(49, 49, 49);
+    padding: 0.4em 1.5em;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    background: #ffffff;
+    border: 1px solid rgb(177, 177, 177);
 }
 
+.inputContainer button[type=submit]:hover {
+    padding: 0.4em 1.8em;
+}
+
+@media only screen and (max-width: 1250px) {
+    .inputContainer input[type=text] {
+        width: 80%;
+        font-size: 1.3em;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.479);
+        border: none;
+        outline: none;
+        color: rgb(94, 94, 94);
+        text-align: center;
+        border: 1px solid rgb(177, 177, 177);
+    }
+}
