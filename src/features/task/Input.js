@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styles from './Input.module.css'
 
-import { useSelector, useDispatch } from 'react-redux'
-import { insertTask, selectTasks } from './taskSlice'
+import { useDispatch } from 'react-redux'
+import { insertTask } from './taskSlice'
 
 
 export function Input() {
@@ -10,8 +10,6 @@ export function Input() {
     const [taskType, setTaskType] = useState('regular')
 
     const dispatch = useDispatch()
-    /* const { task } = useSelector(selectTasks)
-    console.log(task) */
 
     const sumbitTask = event => {
         event.preventDefault()

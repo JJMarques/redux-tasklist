@@ -25,16 +25,29 @@ export const taskSlice = createSlice({
             }
         },
         deleteTask: (state, action) => {
-            console.log(action.payload.task);
             switch (action.payload.type) {
                 case 'important':
-                    /* state.importantTasks.push(action.payload); */
+                    state.importantTasks.splice(action.payload.k, 1)
                     break
                 case 'regular':
-                    /* state.regularTasks.push(action.payload); */   
+                    state.regularTasks.splice(action.payload.k, 1)   
                     break
                 case 'small':
-                    /* state.smallTasks.push(action.payload); */   
+                    state.smallTasks.splice(action.payload.k, 1)   
+                    break 
+                default: return state      
+            }
+        },
+        finishedTask: (state, action) => {
+            switch (action.payload.type) {
+                case 'important':
+                    state.importantTasks[action.payload.k].checked = true
+                    break
+                case 'regular':
+                    state.regularTasks[action.payload.k].checked = true
+                    break   
+                case 'small':
+                    state.smallTasks[action.payload.k].checked = true
                     break 
                 default: return state      
             }
@@ -42,7 +55,7 @@ export const taskSlice = createSlice({
     }
 })
 
-export const { insertTask, deleteTask } = taskSlice.actions;
+export const { insertTask, deleteTask, finishedTask } = taskSlice.actions;
 
 export const selectTasks = state => state
 

@@ -8,16 +8,16 @@ export function TasksDisplay({ type }){
     const { task } = useSelector(selectTasks)
     let tasksList
     if (type === 'important') {
-        tasksList = task.importantTasks.map((t) => (
-            <TaskItem task={t} key={t.date} />
+        tasksList = task.importantTasks.map((t, k) => (
+            <TaskItem task={t} k={k} key={k} />
         ))
     } else if (type === 'small') {
-        tasksList = task.smallTasks.map((t) => (
-            <TaskItem task={t} key={t.date} />
+        tasksList = task.smallTasks.map((t, k) => (
+            <TaskItem task={t} k={k} key={k} />
         ))
     } else if (type === 'regular') {
-        tasksList = task.regularTasks.map((t) => (
-            <TaskItem task={t} key={t.date} />
+        tasksList = task.regularTasks.map((t, k) => (
+            <TaskItem task={t} k={k} key={k} />
         ))
     }
 

@@ -47,5 +47,6 @@
 @media only screen and (max-width: 1250px) {
   .tasksContainer {
     flex-direction: column;
+    align-items: center;
   }
 }
