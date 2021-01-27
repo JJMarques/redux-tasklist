@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 let initialState = {
-    importantTasks: [],
-    smallTasks: [],
-    regularTasks: []
+    importantTasks: JSON.parse(localStorage.getItem('importantTasks')) || [],
+    smallTasks: JSON.parse(localStorage.getItem('smallTasks')) || [],
+    regularTasks: JSON.parse(localStorage.getItem('regularTasks')) || []
 }
 
 export const taskSlice = createSlice({
@@ -14,12 +14,15 @@ export const taskSlice = createSlice({
             switch (action.payload.type) {
                 case 'important':
                     state.importantTasks.push(action.payload);
+                    localStorage.setItem('importantTasks', JSON.stringify(state.importantTasks))
                     break
                 case 'regular':
-                    state.regularTasks.push(action.payload);   
+                    state.regularTasks.push(action.payload);  
+                    localStorage.setItem('regularTasks', JSON.stringify(state.regularTasks)) 
                     break
                 case 'small':
-                    state.smallTasks.push(action.payload);   
+                    state.smallTasks.push(action.payload); 
+                    localStorage.setItem('smallTasks', JSON.stringify(state.smallTasks))  
                     break 
                 default: return state      
             }
@@ -28,12 +31,15 @@ export const taskSlice = createSlice({
             switch (action.payload.type) {
                 case 'important':
                     state.importantTasks.splice(action.payload.k, 1)
+                    localStorage.setItem('importantTasks', JSON.stringify(state.importantTasks))
                     break
                 case 'regular':
-                    state.regularTasks.splice(action.payload.k, 1)   
+                    state.regularTasks.splice(action.payload.k, 1) 
+                    localStorage.setItem('regularTasks', JSON.stringify(state.regularTasks))  
                     break
                 case 'small':
-                    state.smallTasks.splice(action.payload.k, 1)   
+                    state.smallTasks.splice(action.payload.k, 1) 
+                    localStorage.setItem('smallTasks', JSON.stringify(state.smallTasks))  
                     break 
                 default: return state      
             }
@@ -43,14 +49,17 @@ export const taskSlice = createSlice({
                 case 'important':
                     state.importantTasks[action.payload.k].description = 
                     action.payload.newDescription
+                    localStorage.setItem('importantTasks', JSON.stringify(state.importantTasks))  
                     break
                 case 'regular':
                     state.regularTasks[action.payload.k].description = 
                     action.payload.newDescription 
+                    localStorage.setItem('regularTasks', JSON.stringify(state.regularTasks))
                     break
-                case 'small':
+                    case 'small':
                     state.smallTasks[action.payload.k].description = 
                     action.payload.newDescription   
+                    localStorage.setItem('smallTasks', JSON.stringify(state.smallTasks))
                     break 
                 default: return state      
             }
@@ -59,12 +68,15 @@ export const taskSlice = createSlice({
             switch (action.payload.type) {
                 case 'important':
                     state.importantTasks[action.payload.k].checked = true
+                    localStorage.setItem('importantTasks', JSON.stringify(state.importantTasks))
                     break
                 case 'regular':
                     state.regularTasks[action.payload.k].checked = true
+                    localStorage.setItem('regularTasks', JSON.stringify(state.regularTasks))
                     break   
                 case 'small':
                     state.smallTasks[action.payload.k].checked = true
+                    localStorage.setItem('smallTasks', JSON.stringify(state.smallTasks))
                     break 
                 default: return state      
             }
