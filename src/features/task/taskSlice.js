@@ -38,6 +38,23 @@ export const taskSlice = createSlice({
                 default: return state      
             }
         },
+        editedTask: (state, action) => {
+            switch (action.payload.type) {
+                case 'important':
+                    state.importantTasks[action.payload.k].description = 
+                    action.payload.newDescription
+                    break
+                case 'regular':
+                    state.regularTasks[action.payload.k].description = 
+                    action.payload.newDescription 
+                    break
+                case 'small':
+                    state.smallTasks[action.payload.k].description = 
+                    action.payload.newDescription   
+                    break 
+                default: return state      
+            }
+        },
         finishedTask: (state, action) => {
             switch (action.payload.type) {
                 case 'important':
@@ -55,7 +72,7 @@ export const taskSlice = createSlice({
     }
 })
 
-export const { insertTask, deleteTask, finishedTask } = taskSlice.actions;
+export const { insertTask, deleteTask, editedTask, finishedTask } = taskSlice.actions;
 
 export const selectTasks = state => state
 

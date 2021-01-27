@@ -35,6 +35,7 @@ export function Input() {
                     onChange={e => setTaskInput(e.target.value)}
                     placeholder="Walk the dog."
                     autoFocus
+                    maxLength="30"
                 />
                 <div className={styles.selectTaskType}>
                     <label>

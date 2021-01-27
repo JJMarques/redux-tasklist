@@ -3,18 +3,22 @@ import { useSelector } from 'react-redux'
 import { selectTasks } from './taskSlice'
 import { TaskItem } from './TaskItem'
 
+import { AiOutlineWarning, AiOutlineClockCircle } from 'react-icons/ai'
+
 export function TasksDisplay({ type }){
 
     const { task } = useSelector(selectTasks)
-    let tasksList
+    let tasksList, taskIcon
     if (type === 'important') {
         tasksList = task.importantTasks.map((t, k) => (
             <TaskItem task={t} k={k} key={k} />
         ))
+        taskIcon = <AiOutlineWarning style={{ marginRight: '10px' }}/>
     } else if (type === 'small') {
         tasksList = task.smallTasks.map((t, k) => (
             <TaskItem task={t} k={k} key={k} />
         ))
+        taskIcon = <AiOutlineClockCircle style={{ marginRight: '10px' }} />
     } else if (type === 'regular') {
         tasksList = task.regularTasks.map((t, k) => (
             <TaskItem task={t} k={k} key={k} />
@@ -28,7 +32,7 @@ export function TasksDisplay({ type }){
 
     return(
         <div style={color} className={styles.TasksDisplay}>
-            <h2>{type} tasks</h2>
+            <h2>{taskIcon}{type} tasks</h2>
             {tasksList}
         </div>
     )

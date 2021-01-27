@@ -14,6 +14,8 @@
 }
 
 .TasksDisplay h2 {
+    display: flex;
+    align-items: center;
     font-size: 1.2em;
     margin-bottom: 1em;
 }
@@ -24,8 +26,10 @@
     height: auto;
     border-top: 1px solid rgb(228, 228, 228);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .taskContainer div {
@@ -33,9 +37,24 @@
     align-items: center;
 }
 
-.taskContainer input {
+.taskContainer input[type=checkbox] {
     margin-right: 1em;
     cursor: pointer;
+}
+
+.taskContainer input[type=text] {
+    margin: 14px 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.taskGroup {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .deleteButton {
