@@ -19,14 +19,17 @@ export function TaskItem({ task, k }) {
 
     return(
         <div className={styles.taskContainer} key={task.date}>
-            <small style={{ color: 'gray' }}>{timeAgo}</small>
+            <small style={{ color: '#4f4f4f' }}>{timeAgo}</small>
             <div className={styles.taskGroup}>
                 <div>
+                    <label>
                     <input 
                         type="checkbox" 
                         onChange={() => dispatch(finishedTask({ type: task.type, k }))}
                         disabled={task.checked === true}
+                        checked={task.checked === true}
                     />
+                    </label>
                 </div>
                 <TaskNameDisplay task={task} k={k} />
                 <div 
