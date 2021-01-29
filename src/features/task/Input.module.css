@@ -6,13 +6,19 @@
     -5px -5px 10px #e9e9e9;
 }
 
-.inputContainer h1 {
+.inputLabel {
     color: rgb(31, 31, 31);
     margin-top: 0;
+    font-weight: 800;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.inputContainer input[type=text] {
-    font-size: 1.5em;
+.inputLabel input[type=text] {
+    margin-top: 30px;
+    font-size: 0.8em;
     padding: 0.5em 2em;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.479);
@@ -65,7 +71,7 @@
 @media only screen and (max-width: 1250px) {
     .inputContainer input[type=text] {
         width: 80%;
-        font-size: 1.3em;
+        font-size: 0.8em;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.479);
         border: none;

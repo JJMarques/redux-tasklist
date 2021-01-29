@@ -27,8 +27,8 @@ export function Input() {
 
     return(
         <div className={styles.inputContainer}>
-            <h1>Insert a task below ✏️</h1> 
             <form onSubmit={sumbitTask}>
+            <label className={styles.inputLabel}>Insert a task below ✏️
                 <input 
                     type="text"
                     value={taskInput} 
@@ -37,6 +37,7 @@ export function Input() {
                     autoFocus
                     maxLength="30"
                 />
+            </label> 
                 <div className={styles.selectTaskType}>
                     <label>
                         <input

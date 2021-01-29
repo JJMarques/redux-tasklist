@@ -26,8 +26,8 @@ export function TasksDisplay({ type }){
     }
 
     const color = {
-        borderTop: `4px solid ${type === 'important' ? 'rgb(255, 77, 77)' : type === 'small' ? 'rgb(71, 184, 77)' : 'rgb(71, 111, 184)'}`,
-        color: type === 'important' ? 'rgb(255, 77, 77)' : type === 'small' ? 'rgb(71, 184, 77)' : 'rgb(71, 111, 184)' 
+        borderTop: `4px solid ${type === 'important' ? '#e82a2a' : type === 'small' ? '#3d9126' : 'rgb(71, 111, 184)'}`,
+        color: type === 'important' ? '#e82a2a' : type === 'small' ? '#3d9126' : 'rgb(71, 111, 184)' 
     }
 
     return(
