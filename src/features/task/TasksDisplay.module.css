@@ -59,11 +59,13 @@
 
 
 .deleteButton {
+    display: flex;
     cursor: pointer;
     padding: 10px;
     background: rgb(224, 224, 224);
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
+    border: none;
 }
 
 .deleteButton:hover {

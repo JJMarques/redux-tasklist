@@ -11,7 +11,6 @@ export function TaskItem({ task, k }) {
     const [timeAgo, setTimeAgo] = useState('')
 
     const dispatch = useDispatch()
-    
     useEffect(() => {
         const taskDate = new Date(task.date)
         setTimeAgo(`${formatDistanceToNow(taskDate)} ago`)
@@ -32,12 +31,12 @@ export function TaskItem({ task, k }) {
                     </label>
                 </div>
                 <TaskNameDisplay task={task} k={k} />
-                <div 
+                <button 
                     className={styles.deleteButton}
                     onClick={() => dispatch(deleteTask({ type: task.type, k }))}
                 >
                     <AiOutlineDelete />
-                </div>
+                </button>
             </div>
         </div>
     )
