@@ -24,6 +24,7 @@ export function TaskNameDisplay({ task, k }) {
         {
             !isEditing ? (
                 <p 
+                tabindex="0"
                 onClick={() => setIsEditing(true)}
                     style={{
                         textDecoration: task.checked ? 'line-through' : 'none',
