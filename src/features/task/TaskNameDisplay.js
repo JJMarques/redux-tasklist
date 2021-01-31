@@ -23,18 +23,20 @@ export function TaskNameDisplay({ task, k }) {
         <>
         {
             !isEditing ? (
-                <p 
+                <button 
                 tabindex="0"
                 onClick={() => setIsEditing(true)}
                     style={{
+                        border:'none',
                         textDecoration: task.checked ? 'line-through' : 'none',
                         color: task.checked ? 'gray' : 'black',
                         cursor: 'pointer'
                     }}
                 >
                         {task.description}
-                </p>
+                </button>
             ) : (
+                <form onSubmit={finishedEditing}> 
                 <input 
                     type="text" 
                     maxLength="30"
@@ -43,6 +45,7 @@ export function TaskNameDisplay({ task, k }) {
                     onChange={e => setInputValue(e.target.value)}
                     onBlur={finishedEditing}
                 />
+                </form>
             )
         }
         </>
