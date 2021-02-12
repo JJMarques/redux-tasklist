@@ -5,9 +5,8 @@
     padding: 0 3em;
     border-radius: 0 0 20px 20px;
     color: rgb(49, 49, 49);
-    background: #F3F3F3;
-    box-shadow:  6px 6px 12px #dddddd,
-    -6px -6px 12px #ffffff;
+    background: #f3f3f3;
+    box-shadow: 6px 6px 12px #dddddd, -6px -6px 12px #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,12 +36,12 @@
     align-items: center;
 }
 
-.taskContainer input[type=checkbox] {
+.taskContainer input[type='checkbox'] {
     margin-right: 1em;
     cursor: pointer;
 }
 
-.taskContainer input[type=text] {
+.taskContainer input[type='text'] {
     margin: 14px 0;
     background: transparent;
     outline: none;
@@ -57,7 +56,6 @@
     width: 100%;
 }
 
-
 .deleteButton {
     display: flex;
     cursor: pointer;
@@ -70,7 +68,7 @@
 
 .deleteButton:hover {
     background: rgb(207, 207, 207);
-    color: rgb(255, 56, 56)
+    color: rgb(255, 56, 56);
 }
 
 @media only screen and (max-width: 1250px) {
